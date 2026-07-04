@@ -534,7 +534,7 @@
                 <button class="btn-clear-selection" id="btnClearSelection" style="display:none;">Clear selection</button>
             </div>
             <div class="icon-grid" id="iconGrid">
-                <div style="grid-column:1/-1;text-align:center;padding:40px;">📂 Loading icons...</div>
+                <div style="grid-column:1/-1;text-align:center;padding:40px;"> Loading icons...</div>
             </div>
         </section>
 
@@ -550,13 +550,13 @@
                 <div class="code-block-wrap">
                     <div class="code-label">
                         <span>SVG Code</span>
-                        <button class="btn-copy-panel" id="btnCopyPanel">📋 Copy</button>
+                        <button class="btn-copy-panel" id="btnCopyPanel"> Copy</button>
                     </div>
                     <pre id="panelCodeBlock" style="color:#94a3b8;">Click on any icon to view its SVG code</pre>
                 </div>
                 <div class="panel-actions">
                     <button class="btn btn-select" id="btnPanelSelect" disabled>☆ Select Icon</button>
-                    <button class="btn btn-primary" id="btnPanelDownload" disabled>⬇ Download</button>
+                    <button class="btn btn-primary" id="btnPanelDownload" disabled> Download</button>
                 </div>
             </div>
         </aside>
@@ -638,7 +638,7 @@
                 } catch (e) {
                     allIcons = [];
                     iconGrid.innerHTML =
-                        '<div style="grid-column:1/-1;text-align:center;padding:60px;">❌ Could not load icons.json</div>';
+                        '<div style="grid-column:1/-1;text-align:center;padding:60px;"> Could not load icons.json</div>';
                     resultsText.textContent = 'Error loading icons';
                 }
             }
@@ -656,7 +656,7 @@
                 if (!allIcons.length) return;
                 if (!filtered.length) {
                     iconGrid.innerHTML =
-                        '<div style="grid-column:1/-1;text-align:center;padding:60px;">🔍 No icons match</div>';
+                        '<div style="grid-column:1/-1;text-align:center;padding:60px;"> No icons match</div>';
                     resultsText.textContent = '0 results';
                     updateSelectionUI();
                     return;
@@ -737,7 +737,7 @@
                 btnPanelDownload.disabled = false;
                 btnCopyPanel.style.display = '';
                 updatePanelButtons();
-                btnCopyPanel.textContent = '📋 Copy';
+                btnCopyPanel.textContent = ' Copy';
             }
 
             function updatePanelButtons() {
@@ -762,7 +762,7 @@
                 navigator.clipboard.writeText(code).then(() => {
                     btnCopyPanel.textContent = '✓ Copied!';
                     showToast('Copied to clipboard');
-                    setTimeout(() => btnCopyPanel.textContent = '📋 Copy', 2000);
+                    setTimeout(() => btnCopyPanel.textContent = ' Copy', 2000);
                 }).catch(() => {
                     const textarea = document.createElement('textarea');
                     textarea.value = code;
